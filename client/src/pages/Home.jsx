@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router";
+import { useAuth } from "../store/auth"
 
 export function Home() {
     const [fiction, setFiction] = useState([]);
@@ -9,6 +10,7 @@ export function Home() {
     const [rating, setRating] = useState([]);
 
     const navigate = useNavigate();
+    const {URL} = useAuth();
 
     const bottomAnimation = {
         initial: { y: '30%', opacity: 0 },
@@ -17,28 +19,28 @@ export function Home() {
     }
 
     const getByFiction = async () => {
-        const response = await fetch(`http://localhost:3000/api/book?category=fiction`, {
+        const response = await fetch(`${URL}/api/book?category=fiction`, {
             method: 'GET'
         });
         const data = await response.json();
         setFiction(data);
     }
     const getByFantasy = async () => {
-        const response = await fetch(`http://localhost:3000/api/book?category=fantasy`, {
+        const response = await fetch(`${URL}/api/book?category=fantasy`, {
             method: 'GET'
         });
         const data = await response.json();
         setFantasy(data);
     }
     const getByAdventure = async () => {
-        const response = await fetch(`http://localhost:3000/api/book?category=adventure`, {
+        const response = await fetch(`${URL}/api/book?category=adventure`, {
             method: 'GET'
         });
         const data = await response.json();
         setAdventure(data);
     }
     const getByRatings = async () => {
-        const response = await fetch(`http://localhost:3000/api/book?rating=5`, {
+        const response = await fetch(`${URL}/api/book?rating=5`, {
             method: 'GET'
         });
         const data = await response.json();

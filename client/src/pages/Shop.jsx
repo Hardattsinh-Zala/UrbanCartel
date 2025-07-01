@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
+import { useAuth } from "../store/auth";
 
 export function Shop() {
     const [items, setItems] = useState([]);
@@ -7,10 +8,11 @@ export function Shop() {
     const [search, setSearch] = useState("");
 
     const navigate = useNavigate();
+    const {URL} = useAuth();
 
     const getShopItems = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/book/shop?page=${page}&limit=20`, {
+            const response = await fetch(`${URL}/api/book/shop?page=${page}&limit=20`, {
                 method: 'GET',
             });
 
@@ -26,7 +28,7 @@ export function Shop() {
             const value = e.target.value;
             setSearch(value);
             if (value.trim() !== "") {
-                const response = await fetch(`http://localhost:3000/api/book/search?title=${value}`, {
+                const response = await fetch(`${URL}/api/book/search?title=${value}`, {
                     method: 'GET'
                 })
                 const dataset = await response.json();
