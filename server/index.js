@@ -11,7 +11,7 @@ const contactRouter = require("./routes/contact");
 const connectDb = require("./utilities/db");
 const errorFunction = require("./middlewares/error-func");
 const cors = require("cors");
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const corsOption = {
     origin: "http://localhost:5173",
