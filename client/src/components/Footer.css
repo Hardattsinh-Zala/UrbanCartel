@@ -68,9 +68,6 @@ a:hover {
     .data div {
         margin-bottom: 2rem;
     }
-    .links {
-        display: none;
-    }
     .footbar {
         flex-direction: column;
     }
