@@ -7,7 +7,7 @@ export const AuthProvider = ({children}) => {
     const [token, setToken] = useState(localStorage.getItem("token"));
     const [userData, setUserData] = useState({});
     const tokenBearer = "Bearer "+token;
-    const URL = "http://localhost:3000";
+    const URL = "https://urbancartel.onrender.com";
 
     const isLoggedIn = !!token;
 
