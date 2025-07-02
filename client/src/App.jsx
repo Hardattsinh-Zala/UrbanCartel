@@ -15,6 +15,11 @@ import { ShowOrders } from "./pages/user/ShowOrders"
 import { Footer } from "./components/Footer"
 import { ScrollToTop } from "./components/ScrollToTop"
 import { Error } from "./components/Error"
+import { OtpVerify } from "./components/OtpVerify"
+import { Users } from "./pages/admin/Users"
+import {AdminLayout} from "./components/layouts/AdminLayout"
+import { Orders } from "./pages/admin/Orders"
+import { Contacts } from "./pages/admin/Contacts"
 import './App.css'
 
 function App() {
@@ -27,6 +32,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/verify" element={<OtpVerify />} />
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/book/:id" element={<Book />} />
@@ -36,6 +42,11 @@ function App() {
           <Route path="order/show" element={<ShowOrders/>} />
           <Route path="cart/:uid" element={<Cart/>} />
           <Route path="order/:uid" element={<Order/>} />
+        </Route>
+        <Route path="/admin" element={<AdminLayout/>}>
+          <Route path="users" element={<Users/>} />
+          <Route path="orders" element={<Orders/>} />
+          <Route path="contacts" element={<Contacts/>} />
         </Route>
         <Route path="*" element={<Error/>} />
       </Routes>

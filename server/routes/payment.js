@@ -8,7 +8,7 @@ const instance = new Razorpay({
     key_secret: process.env.RAZOR_KEY_SECRET
 });
 
-router.route('/create-order').post(async (req, res) => {
+router.route('/create-order').post(async (req, res, next) => {
     const {amount} = req.body;
 
     const options = {

@@ -10,7 +10,7 @@ router.route("/").get((req, res) => {
 
 router.route("/register").get((req, res) => {
     res.send("This is registeration page.");
-}).post(validate(validator.registerSchema), authcontrollers.register);
+}).post(authcontrollers.register);
 
 router.route("/login").get((req, res) => {
     res.send("This is login page.");

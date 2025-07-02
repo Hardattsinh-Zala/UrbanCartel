@@ -12,7 +12,7 @@ export function Register() {
         password: "",
     });
 
-    const { setUserToken, URL } = useAuth();
+    const { URL } = useAuth();
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -29,30 +29,30 @@ export function Register() {
         }
     }
 
-    const handleSubmit = async (e) => {
+    const generateOtp = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`${URL}/api/register`, {
-                method: 'POST',
+            const res = await fetch(`${URL}/api/otp/generate`, {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(user)
             });
-            const data = await response.json();
-            if (response.ok) {
-                setUserToken(data.token);
-                navigate("/");
-                toast.success(data.msg);
-            } else {
-                toast.error(data.msg);
+            const response = await res.json();
+            if(res.ok) {
+                toast.success(response.msg);
+                navigate('/verify', {state: user});
+            }else {
+                toast.error(response.msg);
             }
         } catch (error) {
             console.log(error);
         }
     }
+
     return <section className="register">
-        <form className="register-container" onSubmit={handleSubmit}>
+        <form className="register-container" onSubmit={generateOtp}>
             <h2>Create account</h2>
             <input type="username" name="username" id="username" placeholder="Enter username" onChange={handleChange} autoComplete="off" />
             <input type="email" name="email" id="email" placeholder="Enter email" onChange={handleChange} autoComplete="off" />
