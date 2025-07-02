@@ -16,8 +16,8 @@ const cors = require("cors");
 const port = process.env.PORT || 3000;
 
 const corsOption = {
-    // origin: "https://urbancartel.vercel.app",
-    origin: "http://localhost:5173",
+    origin: "https://urbancartel.vercel.app",
+    // origin: "http://localhost:5173",
     methods: "GET, POST, PATCH, DELETE, PUT, HEAD",
     credentials: true,
 }
