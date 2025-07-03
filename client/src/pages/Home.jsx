@@ -61,6 +61,11 @@ export function Home() {
                 <p>Explore bestsellers, new arrivals and exclusive deals.</p>
             </motion.div>
         </div>
+        <div className="count">
+            <h1>Browse up to</h1><br />
+            <h1 className="count-num"><sup>+</sup>6000 </h1>
+            <h1>categories of books</h1>
+        </div>
         <div className="home-body">
             <div className="fiction-container">
                 <h1>Top Fiction</h1>
@@ -68,7 +73,7 @@ export function Home() {
                     {
                         fiction.map((item, index) => {
                             return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
-                                <img src={item.image || "https://tse1.mm.bing.net/th?id=OIP.tri5pcbkBl8M-Rv6U3uObAHaL2&pid=Api&P=0&h=180"} alt={item.title} />
+                                <img src={item.image || "https://tse3.mm.bing.net/th/id/OIP.XTRtJ8QLrtuV5EQrqSo5hAAAAA?pid=Api&P=0&h=180"} alt={item.title} />
                                 <h3>{item.title}</h3>
                                 <p>{item.ratings}/5</p>
                                 <p><b>&#8377;{item.price}</b></p>
@@ -83,7 +88,7 @@ export function Home() {
                     {
                         fantasy.map((item, index) => {
                             return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
-                                <img src={item.image || "https://tse1.mm.bing.net/th?id=OIP.tri5pcbkBl8M-Rv6U3uObAHaL2&pid=Api&P=0&h=180"} alt={item.title} />
+                                <img src={item.image || "https://tse3.mm.bing.net/th/id/OIP.XTRtJ8QLrtuV5EQrqSo5hAAAAA?pid=Api&P=0&h=180"} alt={item.title} />
                                 <h3>{item.title}</h3>
                                 <p>{item.ratings}/5</p>
                                 <p><b>&#8377;{item.price}</b></p>
@@ -98,7 +103,7 @@ export function Home() {
                     {
                         adventure.map((item, index) => {
                             return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
-                                <img src={item.image || "https://tse1.mm.bing.net/th?id=OIP.tri5pcbkBl8M-Rv6U3uObAHaL2&pid=Api&P=0&h=180"} alt={item.title} />
+                                <img src={item.image || "https://tse3.mm.bing.net/th/id/OIP.XTRtJ8QLrtuV5EQrqSo5hAAAAA?pid=Api&P=0&h=180"} alt={item.title} />
                                 <h3>{item.title}</h3>
                                 <p>{item.ratings}/5</p>
                                 <p><b>&#8377;{item.price}</b></p>
@@ -113,7 +118,7 @@ export function Home() {
                     {
                         rating.map((item, index) => {
                             return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
-                                <img src={item.image || "https://tse1.mm.bing.net/th?id=OIP.tri5pcbkBl8M-Rv6U3uObAHaL2&pid=Api&P=0&h=180"} alt={item.title} />
+                                <img src={item.image || "https://tse3.mm.bing.net/th/id/OIP.XTRtJ8QLrtuV5EQrqSo5hAAAAA?pid=Api&P=0&h=180"} alt={item.title} />
                                 <h3>{item.title}</h3>
                                 <p>{item.ratings}/5</p>
                                 <p><b>&#8377;{item.price}</b></p>

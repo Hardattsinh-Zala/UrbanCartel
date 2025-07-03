@@ -10,7 +10,7 @@ export function Login() {
         password: "",
     });
 
-    const {setUserToken, URL} = useAuth();
+    const {setUserToken, URL, isAdmin} = useAuth();
     const navigate = useNavigate();
 
     const handleChange = (e) => {

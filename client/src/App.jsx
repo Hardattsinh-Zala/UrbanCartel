@@ -20,7 +20,10 @@ import { Users } from "./pages/admin/Users"
 import {AdminLayout} from "./components/layouts/AdminLayout"
 import { Orders } from "./pages/admin/Orders"
 import { Contacts } from "./pages/admin/Contacts"
+import { Books } from "./pages/admin/Books"
+import { EditBook } from "./pages/admin/EditBook"
 import './App.css'
+import { DeleteBook } from "./pages/admin/DeleteBook"
 
 function App() {
 
@@ -47,6 +50,9 @@ function App() {
           <Route path="users" element={<Users/>} />
           <Route path="orders" element={<Orders/>} />
           <Route path="contacts" element={<Contacts/>} />
+          <Route path="books" element={<Books/>} />
+          <Route path="editBook" element={<EditBook/>} />
+          <Route path="deleteBook" element={<DeleteBook/>} />
         </Route>
         <Route path="*" element={<Error/>} />
       </Routes>

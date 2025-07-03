@@ -4,6 +4,7 @@ import {useState, useEffect} from "react"
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
+    const [isAdmin, setIsAdmin] = useState(localStorage.getItem("isAdmin"));
     const [token, setToken] = useState(localStorage.getItem("token"));
     const [userData, setUserData] = useState({});
     const tokenBearer = "Bearer "+token;
@@ -22,6 +23,8 @@ export const AuthProvider = ({children}) => {
         const data = await response.json();
         if(response.ok) {
             setUserData(data);
+            setIsAdmin(data.isAdmin);
+            localStorage.setItem("isAdmin", data.isAdmin);
         }
     }
 
@@ -37,10 +40,12 @@ export const AuthProvider = ({children}) => {
     const logout = () => {
         setUserData({});
         setToken("");
+        setIsAdmin(false);
+        localStorage.removeItem("isAdmin");
         return localStorage.removeItem("token");
     }
 
-    return <AuthContext.Provider value={{logout, setUserToken, userData, tokenBearer, isLoggedIn, URL}}>
+    return <AuthContext.Provider value={{logout, setUserToken, userData, tokenBearer, isAdmin, isLoggedIn, URL}}>
         {children}
     </AuthContext.Provider>
 }

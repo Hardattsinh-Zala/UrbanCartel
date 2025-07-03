@@ -5,16 +5,12 @@ import { NavLink } from "react-router";
 
 export function AdminLayout() {
     const navigate = useNavigate();
-    const { isLoggedIn, userData } = useAuth();
+    const { isLoggedIn, isAdmin } = useAuth();
 
     useEffect(() => {
-        async () => {
-            const isAdmin = await userData.isAdmin;
-            if (!isLoggedIn) return navigate('/login');
-            console.log(isAdmin);
-            if (!isAdmin) return navigate('/');
-        }
-    }, []);
+        if (!isLoggedIn) return navigate('/login');
+        if (!isAdmin) return navigate('/');
+    }, [isLoggedIn, isAdmin, navigate]);
 
     return <section>
         <div className="admin">
@@ -23,7 +19,7 @@ export function AdminLayout() {
                     <span><NavLink to={'/admin/users'} >Users</NavLink></span>
                     <span><NavLink to={'/admin/orders'} >Orders</NavLink></span>
                     <span><NavLink to={'/admin/contacts'} >Contacts</NavLink></span>
-                    <span>Products</span>
+                    <span><NavLink to={'/admin/books'} >Books</NavLink></span>
                 </div>
                 <Outlet />
             </div>

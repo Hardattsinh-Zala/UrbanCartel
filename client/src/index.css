@@ -139,6 +139,18 @@ input::placeholder, textarea::placeholder {
   margin-bottom: 2rem;
 }
 
+.count {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.5;
+}
+
+.count-num {
+  font-size: 7rem;
+}
+
 .home-hero-text h1 {
   font-size: 3.5rem;
 }
@@ -400,9 +412,11 @@ input::placeholder, textarea::placeholder {
 }
 
 .admin-bar {
+  top: 0;
+  position: sticky;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: inherit;
   width: 20%;
   background-color: #FFFFFF;
   border-right: 3px solid #333333;
@@ -410,17 +424,33 @@ input::placeholder, textarea::placeholder {
   font-size: large;
 }
 
+.users {
+  width: 100%;
+}
+
 .users-container {
+  height: max-content;
+  width: 100%;
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(max(4) , minmax(200px, 1fr));
+  gap: 1rem;
 }
 
 .user-box {
+  width: 250px;
   padding: 1rem;
   border: 2px solid #666666;
   gap: 2rem;
   border-radius: 2rem;
+}
+
+.user-box img {
+  height: 200px;
+}
+
+.editBook-container {
+  padding: 2rem;
 }
 
 @media (max-width: 700px) {
@@ -428,17 +458,26 @@ input::placeholder, textarea::placeholder {
   .admin-container {
     flex-direction: column-reverse;
   }
+  .users-container {
+    grid-template-columns: repeat(min(1), minmax(200px, 1fr));
+  }
   .admin-bar {
     flex-direction: row;
     border-right: none;
     border-top: 2px solid #333333;
     justify-content: space-around;
     width: 100%;
+    bottom: 0;
+    padding: 1rem;
   }
 
   /*Home*/
   .home-body {
     padding: 1rem;
+  }
+  .count {
+    font-size: medium;
+    align-items: start;
   }
   /*book*/
   .book-container {
