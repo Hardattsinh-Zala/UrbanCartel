@@ -367,7 +367,6 @@ input::placeholder, textarea::placeholder {
 /*Order*/
 .order-container {
   padding: 1rem;
-  flex-direction: column;
   height: fit-content;
   justify-content: space-between;
 }
@@ -500,7 +499,12 @@ input::placeholder, textarea::placeholder {
     justify-content: space-between;
     align-items: center;
   }
-  /**/
+  /*Order*/
+  .order-container {
+    flex-direction: column;
+  }
+
+  /*shop*/
   .shop-banner {
     display: none;
   }
