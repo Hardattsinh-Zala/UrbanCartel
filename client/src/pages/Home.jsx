@@ -62,8 +62,8 @@ export function Home() {
             </motion.div>
         </div>
         <div className="count">
-            <h1>Browse up to</h1><br />
-            <h1 className="count-num"><sup>+</sup>6000 </h1>
+            <h1>Explore</h1><br />
+            <h1 className="count-num">6000+</h1>
             <h1>categories of books</h1>
         </div>
         <div className="home-body">
