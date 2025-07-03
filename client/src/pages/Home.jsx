@@ -61,12 +61,12 @@ export function Home() {
                 <p>Explore bestsellers, new arrivals and exclusive deals.</p>
             </motion.div>
         </div>
-        <div className="count">
-            <h1>Explore</h1><br />
-            <h1 className="count-num">6000+</h1>
-            <h1>categories of books</h1>
-        </div>
         <div className="home-body">
+            <div className="count">
+                <h1>Explore</h1><br />
+                <h1 className="count-num">6000+</h1>
+                <h1>categories of books</h1>
+            </div>
             <div className="fiction-container">
                 <h1>Top Fiction</h1>
                 <div className="fiction">
