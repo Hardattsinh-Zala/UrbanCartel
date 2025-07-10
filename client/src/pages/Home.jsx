@@ -71,6 +71,7 @@ export function Home() {
                 <h1>Top Fiction</h1>
                 <div className="fiction">
                     {
+                        fiction.length !== 0?
                         fiction.map((item, index) => {
                             return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
                                 <img src={item.image || "https://tse3.mm.bing.net/th/id/OIP.XTRtJ8QLrtuV5EQrqSo5hAAAAA?pid=Api&P=0&h=180"} alt={item.title} />
@@ -79,6 +80,8 @@ export function Home() {
                                 <p><b>&#8377;{item.price}</b></p>
                             </div>
                         })
+                        :
+                        <p>Loading...</p>
                     }
                 </div>
             </div>
@@ -86,6 +89,7 @@ export function Home() {
                 <h1>Fantasy</h1>
                 <div className="fiction">
                     {
+                        fantasy.length !== 0?
                         fantasy.map((item, index) => {
                             return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
                                 <img src={item.image || "https://tse3.mm.bing.net/th/id/OIP.XTRtJ8QLrtuV5EQrqSo5hAAAAA?pid=Api&P=0&h=180"} alt={item.title} />
@@ -94,6 +98,8 @@ export function Home() {
                                 <p><b>&#8377;{item.price}</b></p>
                             </div>
                         })
+                        :
+                        <p>Loading...</p>
                     }
                 </div>
             </div>
@@ -101,6 +107,7 @@ export function Home() {
                 <h1>Adventure</h1>
                 <div className="fiction">
                     {
+                        adventure.length !== 0?
                         adventure.map((item, index) => {
                             return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
                                 <img src={item.image || "https://tse3.mm.bing.net/th/id/OIP.XTRtJ8QLrtuV5EQrqSo5hAAAAA?pid=Api&P=0&h=180"} alt={item.title} />
@@ -109,6 +116,8 @@ export function Home() {
                                 <p><b>&#8377;{item.price}</b></p>
                             </div>
                         })
+                        :
+                        <p>Loading...</p>
                     }
                 </div>
             </div>
@@ -116,6 +125,7 @@ export function Home() {
                 <h1>Highly Rated</h1>
                 <div className="fiction">
                     {
+                        rating.length !== 0?
                         rating.map((item, index) => {
                             return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
                                 <img src={item.image || "https://tse3.mm.bing.net/th/id/OIP.XTRtJ8QLrtuV5EQrqSo5hAAAAA?pid=Api&P=0&h=180"} alt={item.title} />
@@ -124,6 +134,8 @@ export function Home() {
                                 <p><b>&#8377;{item.price}</b></p>
                             </div>
                         })
+                        :
+                        <p>Loading...</p>
                     }
                 </div>
             </div>

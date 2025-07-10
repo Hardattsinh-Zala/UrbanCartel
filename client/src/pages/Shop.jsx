@@ -61,6 +61,7 @@ export function Shop() {
         {items.length === 0? <p><br /><br />No result found</p> : <p></p> }
         <div className="shop-container">
             {
+                items.length !== 0?
                 items.map((item, index) => {
                     return <div onClick={() => navigate(`/book/${item._id}`)} className="box" key={index}>
                         <img src={item.image || "https://tse1.mm.bing.net/th?id=OIP.tri5pcbkBl8M-Rv6U3uObAHaL2&pid=Api&P=0&h=180"} alt={item.title} />
@@ -69,6 +70,8 @@ export function Shop() {
                         <p><b>&#8377;{item.price}</b></p>
                     </div>
                 })
+                :
+                <p>Loading...</p>
             }
         </div>
         {search === "" &&  <a className="see-more" onClick={() => setPage(page + 1)}>See more</a>}
