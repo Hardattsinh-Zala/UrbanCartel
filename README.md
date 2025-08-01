@@ -1,7 +1,6 @@
 # UrbanCartel 🛒
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue)](https://urbancartel.vercel.app/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A full-featured MERN Stack e-commerce platform with user authentication, cart system, and product management.
 
@@ -16,10 +15,6 @@ A full-featured MERN Stack e-commerce platform with user authentication, cart sy
 - [Installation](#installation)  
 - [Usage](#usage)  
 - [Project Structure](#project-structure)  
-- [Screenshots](#screenshots)  
-- [Roadmap](#roadmap)  
-- [Contributing](#contributing)  
-- [License](#license)  
 - [Contact](#contact)
 
 ---
@@ -135,3 +130,10 @@ UrbanCartel/
 ```
 
 ---
+
+## Contact
+
+Feel free to reach out via:
+
+- **Email**: [zalahardatt@gmail.com](mailto:zalahardatt@gmail.com)  
+- **LinkedIn**: [Hardattsinh Zala](https://www.linkedin.com/in/hardattsinh-zala-cte-gecbvn-ce-b665ba277)
